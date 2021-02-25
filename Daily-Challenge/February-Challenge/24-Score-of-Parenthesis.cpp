@@ -31,3 +31,4 @@ https://leetcode.com/explore/challenge/card/february-leetcoding-challenge-2021/5
 
 // S is a balanced parentheses string, containing only ( and ).
 // 2 <= S.length <= 50
+// .
