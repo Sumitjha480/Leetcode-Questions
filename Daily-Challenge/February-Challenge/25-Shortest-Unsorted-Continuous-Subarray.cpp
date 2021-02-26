@@ -31,6 +31,25 @@ https://leetcode.com/explore/challenge/card/february-leetcoding-challenge-2021/5
 class Solution {
 public:
     int findUnsortedSubarray(vector<int>& nums) {
+        // Modified Approach 2
+        int n = nums.size();  
+        if(n<=1)
+            return 0;
+        int a = -1, mn  = INT_MAX, b = -1, mx  = INT_MIN,j=0;
+        for(int i=n-1;i>=0;i--) {
+            mn = min(mn,nums[i]);
+            if(nums[i]>mn)
+                a = i;
+            mx = max(mx,nums[j]);
+            if(nums[j]<mx)
+                b = j;
+            j++;
+        }
+        if(a == -1) {
+            return 0;
+        }            
+        return b - a + 1;
+        
         // Approach 2
         // Dekho ki last time kab aisa hua tha jab badi value pehle aa gayi thi aur choti baad me
         int n = nums.size();  
